@@ -1,0 +1,97 @@
+{
+  "name": "lead system form",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "documentId": {
+          "__rl": true,
+          "value": "1GInXXcHN1Ls6-USTXvFUvJoo45d76y6ABoco6kYlzWc",
+          "mode": "list",
+          "cachedResultName": " Lead Capture System",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1GInXXcHN1Ls6-USTXvFUvJoo45d76y6ABoco6kYlzWc/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1966209558,
+          "mode": "list",
+          "cachedResultName": "Form responses 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1GInXXcHN1Ls6-USTXvFUvJoo45d76y6ABoco6kYlzWc/edit#gid=1966209558"
+        },
+        "event": "rowAdded",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 1,
+      "position": [
+        16,
+        -32
+      ],
+      "id": "b106ec8a-18cb-4e35-92c9-ac0c7d9cb51c",
+      "name": "Google Sheets Trigger",
+      "credentials": {
+        "googleSheetsTriggerOAuth2Api": {
+          "id": "ScX80SbrNVYknFmu",
+          "name": "Google Sheets Trigger account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.Email }}",
+        "subject": "Thank You for Contacting Us",
+        "message": "=<div style=\"font-family: Arial, sans-serif; direction: ltr; line-height: 1.6;\">   <h2>Hello, {{ $json.Name }}!</h2>    <p>     Thank you for contacting us. We have successfully received your information and appreciate your interest.   </p>    <p>     Our team will review your request and get back to you as soon as possible.   </p>    <hr style=\"border: 0; border-top: 1px solid #ccc;\">    <p style=\"font-size: 0.9em;\">     Best regards,<br>     Customer Support Team   </p> </div>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        224,
+        -32
+      ],
+      "id": "6e66c923-cb43-4aa2-a996-c6aff49d0268",
+      "name": "Send a message",
+      "webhookId": "f6fefe61-eb0c-4027-925c-8cd470ba0259",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Qlg1coYW0FYTl7rE",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Google Sheets Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "b80c5515-d9bd-4466-8bae-dfba4b733d66",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "7955ffc402b8037219a10641d56f7d4b1d8e4ad348639310f5bce4d9bb3e0a52"
+  },
+  "nodeGroups": [],
+  "id": "sF52QrsrpGFFlCbS",
+  "tags": []
+}
