@@ -31,10 +31,7 @@ An automated lead processing system built with **n8n**, **Google Sheets API**, a
 
 ---
 
-## 🚀 How to Import and Run
-
-1. Download the JSON workflow file: [`lead system form.json`](./lead%20system%20form.json).
-2. Open your n8n canvas and click **Import from File**.
-3. Upload `lead system form.json`.
-4. Configure your **Google Sheets** and **Gmail** OAuth2 credentials.
-5. Activate the workflow and test the webform URL!
+## 🎯 Business Impact & Value
+* **Zero Lead Drop-off**: Ensures 100% of incoming inquiries are logged instantly without human error.
+* **Instant Client Engagement**: Sends immediate automated response emails, keeping potential buyers warm and engaged.
+* **Streamlined Operations**: Saves administrative hours weekly by automating manual data entry into Google Sheets.
